@@ -1,0 +1,30 @@
+import pandas as pd
+import numpy as np
+
+credits_taken = pd.read_csv("tmdb_5000_credits.csv")
+movies_database = pd.read_csv("tmdb_5000_credits.csv")
+credits_taken.head()
+
+movies_database.head()
+
+credits_column = credits.rename (index=str, columns {"movie_id:"id"})
+
+movies_database_merge = movies_df.merge(credits_column, on = 'id')
+
+movies_cleaned_df = movies_database_merge.drop(column = ['homepage', 'title_x', 'title_y', 'status', 'production'])
+
+movies_cleaned_df.info()
+
+vote= movies_cleaned_df['vote_count']
+average= movies_cleaned_df['vote_average']
+count = movies_cleaned_df['vote_average'].mean()
+min_votes = movies_cleaned_df ['vote_count'].quantile(0,70)
+)
+movies_cleaned_df['weighted_average'] = ((average*vote)+(count *min_votes ))/(vote+min_votes))
+
+movies_sorted_ranking = movie_cleaned_df.sort_values('weighted_average', 'ascending=False)
+movie_sorted_rankings[['original_title', 'vote_count', "vote_average', 'weighted_average', 'popularity']].head(20)
+
+
+
+
